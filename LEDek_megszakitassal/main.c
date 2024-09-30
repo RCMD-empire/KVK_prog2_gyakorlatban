@@ -66,7 +66,16 @@ void felfeleszamalalo(void){
 		if (ertek[1]==9)
 		{
 			ertek[1]=0;
-			ertek[2]++;
+			if (ertek[2]==9)
+			{
+				ertek[2]=0;
+				if (ertek[3]==9)
+				{
+					ertek[3]=0;
+				}
+				else ertek[3]++;
+			}
+			else ertek[2]++;
 		}
 		else ertek[1]++;
 	} 
