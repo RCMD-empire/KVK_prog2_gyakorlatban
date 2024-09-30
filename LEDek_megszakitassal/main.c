@@ -19,12 +19,14 @@ int main(void)
     /* Replace with your application code */
 	port_init();
 	timer0_ovr_init();
+	PORTA=0x83;
     while (1) 
     {
     }
 }
 void port_init(void)
 {
+	DDRA= 0xFF;
 	DDRB=0xF0;
 	DDRD=0xF0;
 }
