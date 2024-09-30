@@ -11,7 +11,7 @@
 void port_init(void);
 void timer0_ovr_init(void);
 void LED_out(uint8_t);
-uint8_t led = 0x01, ido = 0, dig_sel=0, ertek[4]={0};
+uint8_t led = 0x01, ido = 0, dig_sel=0, ertek[4]={4,3,2,1};
 
 
 int main(void)
