@@ -19,7 +19,7 @@ int main(void)
     /* Replace with your application code */
 	port_init();
 	timer0_ovr_init();
-	PORTA=0x83;
+	PORTA=0xB3;
     while (1) 
     {
     }
