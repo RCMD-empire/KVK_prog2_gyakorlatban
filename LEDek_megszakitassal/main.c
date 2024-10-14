@@ -13,7 +13,7 @@
 
 
 
-
+uint8_t c = "A";
 
 void felfeleszamalalo(void);
 
@@ -27,10 +27,12 @@ int main(void)
 	port_init();
 	timer0_ovr_init();
 	LCD_init();
-	LCD_Puts("a");
+	//LCD_Puts("a");
 	PORTA=0xB3;
     while (1) 
     {
+		if (c=='z' { c='A'; LCD_data(c++);} else LCD_data(c++);
+		_delay_ms(500);
     }
 }
 

@@ -96,3 +96,6 @@ void LCD_Puts (char*s)
 		s++;
 	}
 }
+void LCD_pos(uint8_t row,uint8_t col){
+	
+}

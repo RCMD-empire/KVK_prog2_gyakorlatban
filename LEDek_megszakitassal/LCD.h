@@ -29,5 +29,6 @@ void LCD_cmd(uint8_t cmd);
 void LCD_clock(); 
 void LCD_data(uint8_t data);
 void LCD_Puts (char *s);
+void LCD_pos(uint8_t,uint8_t);
 
 #endif /* LCD_H_ */
