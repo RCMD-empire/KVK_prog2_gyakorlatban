@@ -27,12 +27,15 @@ int main(void)
 	port_init();
 	timer0_ovr_init();
 	LCD_init();
-	//LCD_Puts("a");
+	
+	LCD_pos(2,3);
+
+	LCD_Puts("Hello world!");
 	PORTA=0xB3;
     while (1) 
     {
-		if (c=='z' { c='A'; LCD_data(c++);} else LCD_data(c++);
-		_delay_ms(500);
+		//if (c=='z') { c='A'; LCD_data(c++);} else LCD_data(c++);
+		//_delay_ms(500);
     }
 }
 

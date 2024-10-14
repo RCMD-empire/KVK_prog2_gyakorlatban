@@ -96,6 +96,14 @@ void LCD_Puts (char*s)
 		s++;
 	}
 }
-void LCD_pos(uint8_t row,uint8_t col){
-	
+void LCD_pos(uint8_t row,uint8_t col)
+{
+	switch(row)
+	{
+		case 1:LCD_cmd(0x80|(0+col)); break;
+		case 2:LCD_cmd(0x80|(0x40+col)); break;
+		case 3:LCD_cmd(0x80|(0x10+col)); break;
+		case 4:LCD_cmd(0x80|(0x50+col)); break;SS
+	}
+}
 }
