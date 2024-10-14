@@ -8,14 +8,21 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 #include "main.h"
+#include "Keyboard.h"
 
 
 
 
-
+void port_init(void) {
+	DDRA = 0xFF; //Display
+	DDRC = 0xF8; //Keypad
+}
 void felfeleszamalalo(void);
 
-
+uint8_t tme = 0;
+uint8_t dig_sel = 0;
+uint8_t old_key = 12;
+uint8_t value[4] = {12, 12, 12, 12};
 
 int main(void)
 {
@@ -34,9 +41,12 @@ ISR(TIMER0_OVF_vect)
 {
 	if (!ido--)
 	{
-		LED_out(led);
-		led = led ^ 0x01;
-		felfeleszamalalo();
+		
+		uint8_t key = get_key();
+		if (key < 12 && old_key == 12 ) {
+			shift_val(key);
+		}
+		old_key = key;
 	}
 	seven_seg();
 }
@@ -84,4 +94,10 @@ void ora_perc_masodperc(void){
 		else ertek[1]++;
 	}
 	else ertek[0]++;
+}
+void shift_val(uint8_t num) {
+	value[3] = value[2];
+	value[2] = value[1];
+	value[1] = value[0];
+	value[0] = num;
 }
