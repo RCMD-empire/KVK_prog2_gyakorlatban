@@ -98,6 +98,7 @@ void LCD_Puts (char*s)
 }
 void LCD_pos(uint8_t row,uint8_t col)
 {
+	col -=1;
 	switch(row)
 	{
 		case 1:LCD_cmd(0x80|(0+col)); break;
