@@ -63,7 +63,6 @@ void LCD_cmd(uint8_t cmd){
 	LCD_CMD_PORT &= ~(1<<LCD_RS); //Parancs
 	LCD_CMD_PORT &= ~(1<<LCD_RW); //Küldés
 	LCD_CMD_PORT &= ~(1<<LCD_EN); //EN<-0
-	109
 	LCD_DATA_PORT &= ~(0xF0);
 	LCD_DATA_PORT |= (cmd&0xF0); //fels? 4 bit küldése
 	LCD_clock(); //__| |__

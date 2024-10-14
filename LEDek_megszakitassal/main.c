@@ -9,6 +9,7 @@
 #include <avr/interrupt.h>
 #include "main.h"
 #include "Keyboard.h"
+#include "LCD.h"
 
 
 
@@ -26,6 +27,8 @@ int main(void)
     /* Replace with your application code */
 	port_init();
 	timer0_ovr_init();
+	LCD_init();
+	LCD_Puts("a");
 	PORTA=0xB3;
     while (1) 
     {
