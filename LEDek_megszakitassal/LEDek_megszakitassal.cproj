@@ -134,6 +134,12 @@
     <Compile Include="Keyboard.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="LCD.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="LCD.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LED.c">
       <SubType>compile</SubType>
     </Compile>
