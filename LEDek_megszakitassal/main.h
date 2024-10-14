@@ -9,8 +9,8 @@
 #ifndef MAIN_H_
 #include <avr/io.h>
 #include "init.h"
-#include "LED.h"
-#include "seven_seg.h"
+//#include "LED.h"
+//#include "seven_seg.h"
 #define MAIN_H_
 
 

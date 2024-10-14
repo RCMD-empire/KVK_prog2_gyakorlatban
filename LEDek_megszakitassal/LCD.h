@@ -9,9 +9,6 @@
 #ifndef LCD_H_
 #define LCD_H_
 
-DDRA = 0xFF; //Display
-DDRC = 0xF8; //Keypad
-
 #define F_CPU 16000000UL 
 #include <util/delay.h>
 #include <inttypes.h>
@@ -29,8 +26,8 @@ DDRC = 0xF8; //Keypad
 #define LCD_BL 0 //blink
 void LCD_init(); 
 void LCD_cmd(uint8_t cmd); 
-void LCD clock(); 
+void LCD_clock(); 
 void LCD_data(uint8_t data);
-void LCD Puts (char *s);
+void LCD_Puts (char *s);
 
 #endif /* LCD_H_ */

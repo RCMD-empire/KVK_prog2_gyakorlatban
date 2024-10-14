@@ -5,7 +5,6 @@
  *  Author: RCMD-LaptopB
  */ 
 #include "LED.h"
-#include "avr/io.h"
 void LED_out(uint8_t ledek)
 {
 	PORTB= (ledek<<4) & 0xF0;

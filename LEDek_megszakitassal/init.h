@@ -7,6 +7,7 @@
 
 
 #ifndef INIT_H_
+#include "avr/io.h"
 void port_init(void);
 void timer0_ovr_init(void);
 #define INIT_H_
