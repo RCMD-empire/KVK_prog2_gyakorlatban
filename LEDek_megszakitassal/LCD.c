@@ -4,6 +4,7 @@
  * Created: 2024-10-14 17:35:24
  *  Author: RCMD-LaptopB
  */ 
+#include "LCD.h"
 void LCD_init(){
 	DDRE |= 0xF0;
 	//data7...4 out
