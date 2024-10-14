@@ -7,9 +7,10 @@
 #include "init.h"
 void port_init(void)
 {
-	DDRA= 0xFF;
+	DDRA= 0xFF;//Display
 	DDRB=0xF0;
 	DDRD=0xF0;
+	DDRC = 0xF8; //Keypad
 }
 void timer0_ovr_init(void)
 {

@@ -13,10 +13,7 @@
 
 
 
-void port_init(void) {
-	DDRA = 0xFF; //Display
-	DDRC = 0xF8; //Keypad
-}
+
 void felfeleszamalalo(void);
 
 uint8_t tme = 0;

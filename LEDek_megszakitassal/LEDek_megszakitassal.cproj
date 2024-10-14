@@ -128,6 +128,12 @@
     <Compile Include="init.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="Keyboard.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Keyboard.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="LED.c">
       <SubType>compile</SubType>
     </Compile>
@@ -146,6 +152,11 @@
     <Compile Include="seven_seg.h">
       <SubType>compile</SubType>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="main.cpp">
+      <SubType>compile</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
 </Project>
