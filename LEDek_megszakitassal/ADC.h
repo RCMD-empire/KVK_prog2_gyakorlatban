@@ -11,6 +11,7 @@
 #include "avr/io.h"
 void adc_init(void);
 uint16_t adc_conv(uint8_t);
+uint8_t lm35 (void);
 
 
 

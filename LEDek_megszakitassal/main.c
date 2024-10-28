@@ -16,7 +16,7 @@ int main(void)
 {
 	port_init();
 	timer0_ovr_init();
-	
+	adc_init();
 	
 	LCD_init();
 	
@@ -26,6 +26,7 @@ int main(void)
 	PORTA=0xB3;
 	
     while (1) {
+		LED_out(lm35());
 		//if (c=='z') { c='A'; LCD_data(c++);} else LCD_data(c++);
 		//_delay_ms(500);
     }
@@ -34,8 +35,8 @@ int main(void)
 ISR(TIMER0_OVF_vect)
 {
 	if (!ido--) {
-		LED_out(led);
-		led = led ^ 0x01;
+		//LED_out(led);
+		//led = led ^ 0x01;
 		uint8_t key = get_key();
 		if (key < 12 && old_key == 12 ) shift_val(key);
 		old_key = key;
