@@ -4,6 +4,8 @@
  * Created: 2024-10-14 17:35:24
  *  Author: RCMD-LaptopB
  */ 
+
+
 #include "LCD.h"
 void LCD_init(){
 	DDRE |= 0xF0;
@@ -104,7 +106,6 @@ void LCD_pos(uint8_t row,uint8_t col)
 		case 1:LCD_cmd(0x80|(0+col)); break;
 		case 2:LCD_cmd(0x80|(0x40+col)); break;
 		case 3:LCD_cmd(0x80|(0x10+col)); break;
-		case 4:LCD_cmd(0x80|(0x50+col)); break;SS
+		case 4:LCD_cmd(0x80|(0x50+col)); break;
 	}
-}
 }

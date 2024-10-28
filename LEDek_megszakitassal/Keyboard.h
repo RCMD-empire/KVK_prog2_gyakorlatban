@@ -8,10 +8,7 @@
 
 #ifndef KEYBOARD_H_
 #define KEYBOARD_H_
-
 uint8_t get_key(void);
 
-
-
-
 #endif /* KEYBOARD_H_ */
+

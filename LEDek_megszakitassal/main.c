@@ -4,57 +4,47 @@
  * Created: 2024-09-23 16:29:42
  * Author : RCMD-LaptopB
  */ 
-#define F_CPU 8000000UL // legeslegfelul kell
-#include <avr/io.h>
-#include <avr/interrupt.h>
 #include "main.h"
-#include "Keyboard.h"
-#include "LCD.h"
 
-
-
-uint8_t c = "A";
-
-void felfeleszamalalo(void);
-
+uint8_t c = 'A';
 uint8_t ido = 0;
+uint8_t led = 0x01;
 uint8_t old_key = 12;
 uint8_t dig_sel = 0;
 uint8_t ertek[4] = {12, 12, 12, 12};
 int main(void)
 {
-    /* Replace with your application code */
 	port_init();
 	timer0_ovr_init();
+	
+	
 	LCD_init();
 	
 	LCD_pos(2,3);
 
 	LCD_Puts("Hello world!");
 	PORTA=0xB3;
-    while (1) 
-    {
+	
+    while (1) {
 		//if (c=='z') { c='A'; LCD_data(c++);} else LCD_data(c++);
 		//_delay_ms(500);
     }
 }
 
-
-
 ISR(TIMER0_OVF_vect)
 {
-	if (!ido--)
-	{
-		
+	if (!ido--) {
+		LED_out(led);
+		led = led ^ 0x01;
 		uint8_t key = get_key();
-		if (key < 12 && old_key == 12 ) {
-			shift_val(key);
-		}
+		if (key < 12 && old_key == 12 ) shift_val(key);
 		old_key = key;
 	}
 	seven_seg();
 }
 
+/* 
+//nem hasznalat
 void felfeleszamalalo(void){
 	if (ertek[0]==9)
 	{
@@ -99,15 +89,7 @@ void ora_perc_masodperc(void){
 	}
 	else ertek[0]++;
 }
-void shift_val(uint8_t num) {
-	ertek[3] = ertek[2];
-	ertek[2] = ertek[1];
-	ertek[1] = ertek[0];
-	ertek[0] = num;
-}
 
-void seven_seg(void){
-	PORTA = 1<<7 | dig_sel <<4 | ertek[dig_sel];
-	if (dig_sel==3) dig_sel=0;
-	else dig_sel++;
-}
+*/
+
+

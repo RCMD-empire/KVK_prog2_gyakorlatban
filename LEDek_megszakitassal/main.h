@@ -7,11 +7,14 @@
 
 
 #ifndef MAIN_H_
-#include <avr/io.h>
 #include "init.h"
+#include "LCD.h"
+#include "LED.h"
 #include "ADC.h"
-//#include "LED.h"
-//#include "seven_seg.h"
+#include "Keyboard.h"
+#include "seven_seg.h"
+void felfeleszamalalo(void);
+
 #define MAIN_H_
 
 
